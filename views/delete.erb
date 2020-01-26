@@ -1,0 +1,10 @@
+<% if @task %>
+<p> Are you sure you want to delete this task</em>?</p>
+<form action="/<%= @task["id"] %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="" value="Delete It">
+  <a href="/">Cancel</a>
+</form>
+<% else %>
+<p>Task not founded</p>
+<% end %>

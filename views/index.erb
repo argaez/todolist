@@ -1,0 +1,18 @@
+<br>
+<form action="/new" class="form-inline" method="POST">
+    <input type="text" placeholder="Task to Do" name="content">
+    <button type="submit" class="btn">Publish</button>
+</form>
+<br>
+<% @tasks.each do |task| %>
+    <article <%= 'class="complete"' if task["done"] == true %>>
+        <p><%= task["title"] %></p>
+        <p class="meta">Created: <%= task["created_at"] %></p> 
+        <p class>
+            <a href="/<%=task["id"]%>/complete">Complete!</a>
+        </p>  
+        <p>
+            <a href="/<%=task["id"]%>/delete">Delete</a>
+        </p>
+    </article>
+<% end %>
